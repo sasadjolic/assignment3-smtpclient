@@ -59,7 +59,7 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
 
     # Send message data.
     # Fill in start
-    msgCommand = 'This is my assignment 3 lab\r\n'
+    msgCommand = 'Subject: This is my assignment 3 lab\r\n\r\nJust a test message you can ignore.\r\n'
     clientSocket.send(msgCommand.encode())
     # Fill in end
 
@@ -67,7 +67,7 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
     # Fill in start
     msgCommand = '.\r\n'
     clientSocket.send(msgCommand.encode())
-    #recv6 = clientSocket.recv(1024).decode()
+    recv6 = clientSocket.recv(1024).decode()
     #print(recv6) 
     #if recv6[:3] != '250':
     #    print('250 reply not received from server.')
